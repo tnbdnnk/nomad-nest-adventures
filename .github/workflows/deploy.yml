@@ -31,11 +31,13 @@ jobs:
 
       - name: Configure Git user
         run: |
-            git config --global user.name Tetiana Bidnenko
-            git config --global user.email tnbdnnk@gmail.com
+          git config --global user.name "Tetiana Bidnenko"
+          git config --global user.email "tnbdnnk@gmail.com"
 
       - name: Deploy to GitHub Pages
         run: npm run deploy
         working-directory: ./client
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
