@@ -31,7 +31,7 @@ jobs:
 
       - name: Configure Git user
         run: |
-            git config --global user.name tnbdnnk
+            git config --global user.name Tetiana Bidnenko
             git config --global user.email tnbdnnk@gmail.com
 
       - name: Deploy to GitHub Pages
