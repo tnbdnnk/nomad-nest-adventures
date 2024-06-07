@@ -5,7 +5,7 @@ import logger from 'morgan';
 // dotenv.config();
 import 'dotenv/config';
 
-import advertRoutes from '../routes/advertRoutes.js';
+import router from './routes/advertRoutes';
 
 const app = express();
 const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
@@ -14,7 +14,7 @@ app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/adverts", advertRoutes);
+app.use("/api/adverts", router);
 
 app.get('/', (req, res) => {
     res.send('Hello world!');
