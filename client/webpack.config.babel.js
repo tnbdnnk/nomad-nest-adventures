@@ -13,12 +13,19 @@ export default {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: 'babel-loader'
+                    loader: 'babel-loader',
+                    options: {
+                        presets:['@babel/preset-env', '@babel/preset-react'],
+                    },
                 },
             },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
         ],
     },
     plugins: [
@@ -27,8 +34,11 @@ export default {
         }),
     ],
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        },
         compress: true,
         port: 3000,
+        open: true,
     },
 };
