@@ -1,6 +1,8 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { fileURLToPath } from 'url';
+import webpack from 'webpack';
+const { DefinePlugin } = webpack;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -32,6 +34,9 @@ export default {
         new HtmlWebpackPlugin({
             template: './public/index.html',
         }),
+        new DefinePlugin({
+            'process.env.API': JSON.stringify('https://nomad-nest-adventures.onrender.com')
+        })
     ],
     devServer: {
         static: {
