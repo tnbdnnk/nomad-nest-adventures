@@ -16,9 +16,9 @@ app.use(express.json());
 
 app.use("/api/adverts", router);
 
-app.get('/', (req, res) => {
-    res.send('Hello world!');
-})
+// app.get('/', (req, res) => {
+//     res.send('Hello world!');
+// })
 
 app.use((err, req, res, next) => {
     if (typeof err.status !== "undefined" && typeof err.message !== "undefined") {
