@@ -21,9 +21,9 @@ const App = () => {
                 </nav>
                 <div>
                     <Routes>
-                        <Route exact path="/" element={Home} />
-                        <Route path="/catalog" element={Adverts} />
-                        <Route path="/favorites" element={Favorites} />
+                        <Route exact path="/" element={<Home/>} />
+                        <Route path="/catalog" element={<Adverts/>} />
+                        <Route path="/favorites" element={<Favorites/>} />
                         <Route path="*" element={() => <Navigate to="/" />} />
                     </Routes>
                 </div>
