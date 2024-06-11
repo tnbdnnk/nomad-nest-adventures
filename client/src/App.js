@@ -10,7 +10,7 @@ import Favorites from "./components/Favorites.js";
 
 const App = () => {
     return (
-        <Router>
+        <Router basename="/nomad-nest-adventures">
             <div>
                 <nav>
                     <ul>
@@ -21,9 +21,9 @@ const App = () => {
                 </nav>
                 <div>
                     <Routes>
-                        <Route exact path="/" component={Home} />
-                        <Route path="/catalog" component={Adverts} />
-                        <Route path="/favorites" component={Favorites} />
+                        <Route exact path="/" element={Home} />
+                        <Route path="/catalog" element={Adverts} />
+                        <Route path="/favorites" element={Favorites} />
                         <Route path="*" element={<Navigate to="/"/>} />
                     </Routes>
                 </div>
