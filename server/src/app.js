@@ -5,7 +5,7 @@ import logger from 'morgan';
 // dotenv.config();
 import 'dotenv/config';
 
-import router from './routes/advertRoutes';
+import router from './routes/advertRoutes.js';
 
 const app = express();
 const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';

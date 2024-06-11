@@ -1,26 +1,5 @@
 import mongoose from "mongoose";
 
-const advertSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    price: { type: Number, required: true },
-    reting: { type: Number, required: true },
-    location: { type: String, required: true },
-    adults: { type: Number, required: true },
-    children: { type: Number, required: true },
-    engine: { type: String, required: true },
-    transmission: { type: String, required: true },
-    form: { type: String, required: true },
-    lenght: { type: String, required: true },
-    width: { type: String, required: true },
-    height: { type: String, required: true },
-    tank: { type: String, required: true },
-    consumption: { type: String, required: true },
-    description: { type: String, required: true },
-    details: detailSchema,
-    gallery: { type: [String], required: true },
-    reviews: [reviewSchema]
-});
-
 const detailSchema = new mongoose.Schema({
     airConditioner: { type: Number, required: true },
     bathroom: { type: Number, required: true },
@@ -44,5 +23,27 @@ const reviewSchema = new mongoose.Schema({
     coment: { type: String, required: true }
 });
 
-const Advert = mongoose.Model('Advert', advertSchema);
+const advertSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    price: { type: Number, required: true },
+    reting: { type: Number, required: true },
+    location: { type: String, required: true },
+    adults: { type: Number, required: true },
+    children: { type: Number, required: true },
+    engine: { type: String, required: true },
+    transmission: { type: String, required: true },
+    form: { type: String, required: true },
+    lenght: { type: String, required: true },
+    width: { type: String, required: true },
+    height: { type: String, required: true },
+    tank: { type: String, required: true },
+    consumption: { type: String, required: true },
+    description: { type: String, required: true },
+    details: detailSchema,
+    gallery: { type: [String], required: true },
+    reviews: [reviewSchema]
+});
+
+
+const Advert = mongoose.model('Advert', advertSchema);
 export default Advert;

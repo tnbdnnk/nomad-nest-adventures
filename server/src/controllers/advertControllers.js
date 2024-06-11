@@ -1,4 +1,4 @@
-import Advert from "../models/Advert";
+import Advert from "../models/Advert.js";
 
 export const getAdverts = async (req, res) => {
     try {
