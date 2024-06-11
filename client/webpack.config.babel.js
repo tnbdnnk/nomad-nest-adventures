@@ -36,7 +36,6 @@ export default {
     alias: {
       src: path.resolve(__dirname, "src"),
       components: path.resolve(__dirname, "src/components"),
-      pages: path.resolve(__dirname, "src/pages"),
     },
   },
   plugins: [
@@ -45,7 +44,7 @@ export default {
     }),
     new DefinePlugin({
       "process.env.API": JSON.stringify(
-        "https://nomad-nest-adventures.onrender.com"
+        "https://nomad-nest-adventures.onrender.com/api"
       ),
     }),
   ],
@@ -58,7 +57,7 @@ export default {
     open: true,
     hot: true,
     historyApiFallback: {
-      index: "/nomad-nest-adventures/", // Ensure this matches your basename
+      index: "/nomad-nest-adventures", // Ensure this matches your basename
     },
   },
   mode: "development",

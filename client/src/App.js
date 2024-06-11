@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate,Link } from 'react-router-dom';
 
 import Home from "./components/Home.js";
 import Adverts from "./components/Adverts.js";
@@ -14,9 +14,9 @@ const App = () => {
             <div>
                 <nav>
                     <ul>
-                        <li> <a href="/" >Home</a></li>
-                        <li> <a href="/catalog" >Catalog</a></li>
-                        <li> <a href="/favorites" >Favorites</a></li>
+                        <li> <Link to="/" >Home</Link></li>
+                        <li> <Link to="/catalog" >Catalog</Link></li>
+                        <li> <Link to="/favorites" >Favorites</Link></li>
                     </ul>
                 </nav>
                 <div>
@@ -24,7 +24,7 @@ const App = () => {
                         <Route exact path="/" element={Home} />
                         <Route path="/catalog" element={Adverts} />
                         <Route path="/favorites" element={Favorites} />
-                        <Route path="*" element={<Navigate to="/"/>} />
+                        <Route path="*" element={() => <Navigate to="/" />} />
                     </Routes>
                 </div>
             </div>
