@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAdverts, getAdvertById } from '../controllers/advertControllers';
+import { getAdverts, getAdvertById } from '../controllers/advertControllers.js';
 
 const router = express.Router();
 
